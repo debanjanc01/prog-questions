@@ -1,0 +1,35 @@
+{
+    "questions": [
+    {
+        "name":"Palindrome",
+        "desc":"A palindrome is a number or string which is the same when read from both forward and backward. For example the word <b>'madam'</b> is a palindrome.",
+        "c":"#include<stdio.h>\nint main(){\n char str[]=\"madam\";\n int left=0;\n int right=strlen(str)-1;\n\n while(left<=right){\n  if(str[left++]!=str[right--]){\n   printf(\"Not a palindrome\");\n   return 0;\n  }\n }\n\n printf(\"Is a palindrome\");\n} ",
+        "java":"class PalindromeCheck {\n public static void main(String args[]){\n  String word=\"madam\";\n  int left=0;\n  int right=word.length()-1;\n\n  while(left<=right){\n   if(word.charAt[left++]!=word.charAt[right--]){\n    System.out.println(\"Not a palindrome\");\n    return;\n   }\n  }\n\n  System.out.println(\"Is a palindrome\");\n }\n}  "
+    },
+    {
+        "name":"Fibonacci Sequence",
+        "desc":"Fibonacci numbers are the numbers in the integer sequence where every number after the first two numbers are the sum of the two previous numbers. The Fibonnaci series goes like this:<b> 0, 1, 1, 2, 3, 5, 8, 13, 21 ... </b>",
+        "c":"#include<stdio.h>\nint main(){\n int n1=0;\n int n2=1;\n int n3=0;\n\n printf(\"%d, %d\",n1,n2);\n\n int total_numbers=10;\n int i;\n\n for(i=0;i<total_numbers-2;i++){\n  n3=n1+n2;\n  printf(\", %d\",n3);\n  n1=n2; \n  n2=n3;\n }\n\nreturn 0\n}",
+        "java":"class Fibonacci{\n public static void main(String args[]){\n  int n1=0,n2=1,n3,total_numbers=10;\n  System.out.print(n1+\", \"+n2);\n\n  for(int i=0;i<total_numbers-2;i++){\n    n3=n1+n2;\n    System.out.print(\", \"+n3);\n    n1=n2;\n    n2=n3;\n  }\n }\n}"
+    },
+    {
+        "name":"Factorial of a number",
+        "desc":"A factorial of a number N is the following product:<b> N × (N-1) × (N-2) × (N-3) ... × 3 × 2 × 1 </b>",
+        "c":"#include<stdio.h>\nint main(){\n int n=6;\n int factorial=1;\n\n while(n > 1){\n  factorial=factorial*n--;\n }\n\n printf(\"The factorial is %d\",factorial);\n return 0;\n} ",
+        "java":"class Factorial{\n public static void main (String args[]){\n  int n=6;\n  int factorial=1;\n\n  while(n > 1 ){\n   factorial*=n--;\n  }\n\n  System.out.println(\"The factorial is \"+factorial);\n }\n}"
+    },
+    {
+        "name":"Bubble Sort",
+        "desc":"Bubble sort is used to sort the members of an array in ascending or descending order. The time complexity for bubble sort is <b>O(n<sup>2</sup>)</b> where n is the number of array elements.",
+        "c":"#include<stdio.h>\nint main(){\n int arr[]={13,43,54,12,65,32,4,33,67};\n int length=(sizeof(arr))/(sizeof(arr[0]));\n int i,j;\n\n for(i=0;i<length-1;i++){\n  for(j=0;j<length-1-i;j++){\n\n   if(arr[j]>arr[j+1]){\n    arr[j]=arr[j]+arr[j+1];\n    arr[j+1]=arr[j]-arr[j+1];\n    arr[j]=arr[j]-arr[j+1];\n\n   }\n  }\n }\n\n for(i=0;i<length;i++){\n  printf(\"%d \",arr[i]);\n}",
+        "java":"class BubbleSort{\n public static void main(String args[]){\n  int arr[]={12,43,54,12,65,32,4,33,67};\n\n  for(int i=0;i<arr.length-1;i++){\n   for(int j=0;j<arr.length-1-i;j++){\n\n    if(arr[j]>arr[j+1]){\n     arr[j]=arr[j]+arr[j+1]\n     arr[j+1]=arr[j]-arr[j+1]\n     arr[j]=arr[j]-arr[j+1];\n\n    }\n   }\n  }\n\n  for(int i=0;i<arr.length;i++){\n   System.out.println(arr[i]+\" \");\n  }\n }\n}"
+    },
+    {
+        "name":"3<sup>rd</sup> largest element in an array",
+        "desc":"The easiest solution to finding the 3rd largest element in an array would be to first sort the array. However that involves higher time complexity. The same can be solved in linear time.",
+        "c":"#include<stdio.h>\n#include<limits.h>\nint main(){\n int arr[]={13,43,54,12,65,32,4,33,67};\n int i;\n int largest=arr[0];\n int second_largest=INT_MIN;\n int third_largest=INT_MIN;\n int length=(sizeof(arr))/(sizeof(arr[0]);\n\n if(length < 3){\n  printf(\"Array size too small\");\n  return 0;\n }\n else{\n  for(i=1;i<length;i++){\n\n   if(arr[i] > largest){\n    third_largest=second_largest;\n    second_largest=largest;\n    largest=arr[i];\n   }\n\n   if(arr[i] > second_largest){\n    third_largest=second_largest;\n    second_largest=arr[i];\n   }\n\n   if(arr[i] > third_largest){\n    third_largest=arr[i];\n   }\n  }\n }\n\n printf(\"%d is the third largest element\",third_largest);\n}",
+        "java":"class ThirdLargest{\n public static void main(String args[]){\n  int arr[]={13,43,54,12,65,32,4,33,67};\n  int largest=arr[0];\n  int second_largest=Integer.MIN_VALUE;\n  int third_largest=Integer.MIN_VALUE;\n  int length=arr.length;\n\n  if(length < 3){\n   System.out.println(\"Array size too small\");\n   return;\n  }\n  else{\n   for(int i=1;i<length;i++){\n\n    if(arr[i] > largest){\n     third_largest=second_largest;\n     second_largest=largest;\n     largest=arr[i];\n    }\n\n    if(arr[i] > second_largest){\n     third_largest=second_largest;\n     second_largest=arr[i];\n    }\n\n    if(arr[i] > third_largest){\n     third_largest=arr[i];\n    }\n   }\n  }\n\n  System.out.println(third_largest+ \" is the third largest element\");\n }\n}" 
+    }
+
+    ]
+}
