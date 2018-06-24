@@ -1,6 +1,6 @@
 $(window).load(function(){
              //read data from file
-            $.getJSON("/data.json",function(data){
+            $.getJSON("data.json",function(data){
                 var questions=data.questions;
                 var result='';
                 questions.forEach(question => {
