@@ -1,4 +1,4 @@
-$(window).load(function(){
+$(document).ready(function(){
              //read data from file
             $.getJSON("data.json",function(data){
                 var questions=data.questions;
